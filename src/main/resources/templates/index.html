@@ -8,22 +8,25 @@
     <title>Login</title>
     <link rel="stylesheet" href="style/styleCss.css">
 </head>
-<body>
-    <main class="container">
-        <h2>Login</h2>
-        <form method="post" action="/telaInicial">
-            <div class="input-field">
-                <input type="text" name="username" id="username"
-                       placeholder="Email">
-                <div class="underline"></div>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password" id="password"
-                       placeholder="Senha">
-                <div class="underline"></div>
-            </div>
-            <button type="submit">Continue</button>
-        </form>
-    </main>
+<body class="body-login">
+
+    <div class="login">
+        <main class="container">
+            <h2>Login</h2>
+            <form method="post" action="/telaInicial">
+                <div class="input-field">
+                    <input type="text" name="username" id="username"
+                           placeholder="Email">
+                    <div class="underline"></div>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" id="password"
+                           placeholder="Senha">
+                    <div class="underline"></div>
+                </div>
+                <button type="submit">Continue</button>
+            </form>
+        </main>
+    </div>
 </body>
 </html>

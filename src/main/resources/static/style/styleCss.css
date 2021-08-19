@@ -9,13 +9,22 @@
 }
 
 body{
-    background: linear-gradient(45deg, 	#006400, #008000);
+    background: white;
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
+
+}
+
+.body-login{
+    background: linear-gradient(45deg, 	#1c0064, #008000)!important;
+}
+
+.login {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 
 main.container{
@@ -95,11 +104,12 @@ form .input-field:first-child{
     color: rgba(0, 0, 0, 0.5);
 }
 
+
 form button[type="submit"]{
     margin-top: 2rem;
     padding: 0.4rem;
     width: 100%;
-    background: linear-gradient(to left, #8B0000, #FF0000);
+    background: linear-gradient(to left, #1c0064, #FF0000);
     cursor: pointer;
     color: white;
     font-size: 0.9rem;
@@ -110,14 +120,13 @@ form button[type="submit"]{
 
 form button[type="submit"]:hover{
     letter-spacing: 0.5px;
-    background: linear-gradient(to right, #8B0000, #FF0000);
-}
-body.container{
-    background: #98FB98;
+    background: linear-gradient(to right, #1c0064, #FF0000);
 }
 
+
 .nav-wrapper{
-    background: linear-gradient(to left, #006400, #008000);
+    background: linear-gradient(45deg, 	#1c0064, #008000);
+
 }
 
 
