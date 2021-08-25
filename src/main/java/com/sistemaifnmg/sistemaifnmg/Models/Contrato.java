@@ -41,6 +41,9 @@ public class Contrato implements Serializable {
     @Column(length = 250)
     private String fiscal;
 
+    @Column(length = 250)
+    private String vigenciaGarantia;
+
 
     public long getId() {
         return id;
@@ -144,5 +147,13 @@ public class Contrato implements Serializable {
 
     public void setFiscal(String fiscal) {
         this.fiscal = fiscal;
+    }
+
+    public String getVigenciaGarantia() {
+        return vigenciaGarantia;
+    }
+
+    public void setVigenciaGarantia(String vigenciaGarantia) {
+        this.vigenciaGarantia = vigenciaGarantia;
     }
 }
