@@ -16,7 +16,7 @@ public class Contrato implements Serializable {
     private String anoOrigem;
 
     @Column(length = 70)
-    private String contrato;
+    private String numContrato;
 
     @Column(length = 70)
     private String processo;
@@ -61,12 +61,12 @@ public class Contrato implements Serializable {
         this.anoOrigem = anoOrigem;
     }
 
-    public String getContrato() {
-        return contrato;
+    public String getNumContrato() {
+        return numContrato;
     }
 
-    public void setContrato(String contrato) {
-        this.contrato = contrato;
+    public void setNumContrato(String numContrato) {
+        this.numContrato = numContrato;
     }
 
     public String getProcesso() {
