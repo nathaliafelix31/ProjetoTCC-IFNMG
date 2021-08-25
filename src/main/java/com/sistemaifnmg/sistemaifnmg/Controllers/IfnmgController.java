@@ -30,7 +30,7 @@ public class IfnmgController {
     }
 
     @RequestMapping(value="/novoContrato", method=RequestMethod.POST)
-    public String novoContrato(@Valid Contrato contrato){
+    public String novoContrato(Contrato contrato){
 
         cr.save(contrato);
         return "redirect:/novoContrato";

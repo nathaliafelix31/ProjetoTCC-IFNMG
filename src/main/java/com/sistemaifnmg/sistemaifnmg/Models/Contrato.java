@@ -1,91 +1,60 @@
 package com.sistemaifnmg.sistemaifnmg.Models;
 
-        import java.io.Serializable;
-        import java.math.BigDecimal;
-        import java.util.Date;
-        import javax.persistence.Column;
-        import javax.persistence.Entity;
-        import javax.persistence.GeneratedValue;
-        import javax.persistence.GenerationType;
-        import javax.persistence.Id;
-        import javax.persistence.ManyToOne;
-        import javax.persistence.Table;
-        import javax.persistence.Temporal;
-        import javax.persistence.TemporalType;
-        import javax.persistence.Version;
-        import javax.validation.constraints.NotEmpty;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="Contratos")
 public class Contrato implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static  final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
+    private String anoOrigem;
 
-    @Temporal(TemporalType.DATE)
-    private Date anoOrigem;
-
-
-    @Column(length = 70, nullable = true)
+    @Column(length = 70)
     private String contrato;
 
-    @Column(length = 70, nullable = true)
+    @Column(length = 70)
     private String processo;
 
-    @Column(length = 250, nullable = true)
+    @Column(length = 250)
     private String objeto;
 
     @Column(precision = 8, scale = 2)
     private BigDecimal valor;
 
-    @Column(length = 250, nullable = true)
+    @Column(length = 250)
     private String empContratada;
 
-    @Temporal(TemporalType.DATE)
-    private Date dataAssinatura;
-
-    @Temporal(TemporalType.DATE)
-    private Date inicioVigencia;
-
-    @Temporal(TemporalType.DATE)
-    private Date finalVigencia;
-
-    @Temporal(TemporalType.DATE)
-    private Date publiDou;
+    private String dataAssinatura;
+    private String inicioVigencia;
+    private String finalVigencia;
+    private String publiDou;
 
     @Column(length = 250)
     private String obs;
 
     @Column(length = 250)
-    private String vigenciaGarantia;
-
-
-
-    @Column(length = 250, nullable = true)
     private String fiscal;
 
-    @Version
-    private long version;
 
-
-
-    public long getVersion() {
-        return version;
+    public long getId() {
+        return id;
     }
 
-    public void setVersion(long version) {
-        this.version = version;
+    public void setId(long id) {
+        this.id = id;
     }
 
-
-    public Date getAnoOrigem() {
+    public String getAnoOrigem() {
         return anoOrigem;
     }
 
-    public void setAnoOrigem(Date anoOrigem) {
+    public void setAnoOrigem(String anoOrigem) {
         this.anoOrigem = anoOrigem;
     }
 
@@ -129,35 +98,35 @@ public class Contrato implements Serializable {
         this.empContratada = empContratada;
     }
 
-    public Date getDataAssinatura() {
+    public String getDataAssinatura() {
         return dataAssinatura;
     }
 
-    public void setDataAssinatura(Date dataAssinatura) {
+    public void setDataAssinatura(String dataAssinatura) {
         this.dataAssinatura = dataAssinatura;
     }
 
-    public Date getInicioVigencia() {
+    public String getInicioVigencia() {
         return inicioVigencia;
     }
 
-    public void setInicioVigencia(Date inicioVigencia) {
+    public void setInicioVigencia(String inicioVigencia) {
         this.inicioVigencia = inicioVigencia;
     }
 
-    public Date getFinalVigencia() {
+    public String getFinalVigencia() {
         return finalVigencia;
     }
 
-    public void setFinalVigencia(Date finalVigencia) {
+    public void setFinalVigencia(String finalVigencia) {
         this.finalVigencia = finalVigencia;
     }
 
-    public Date getPubliDou() {
+    public String getPubliDou() {
         return publiDou;
     }
 
-    public void setPubliDou(Date publiDou) {
+    public void setPubliDou(String publiDou) {
         this.publiDou = publiDou;
     }
 
@@ -169,27 +138,11 @@ public class Contrato implements Serializable {
         this.obs = obs;
     }
 
-    public String getVigenciaGarantia() {
-        return vigenciaGarantia;
-    }
-
-    public void setVigenciaGarantia(String vigenciaGarantia) {
-        this.vigenciaGarantia = vigenciaGarantia;
-    }
-
     public String getFiscal() {
         return fiscal;
     }
 
     public void setFiscal(String fiscal) {
         this.fiscal = fiscal;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }

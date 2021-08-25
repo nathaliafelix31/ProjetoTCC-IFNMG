@@ -26,20 +26,20 @@
 </nav>
 
 
-    <form method="get" action="/novoContrato">
-        Ano de Origem<input type="date" name="anoDeOrigem">
-        Contrato: <input type="text" name="contrato" placeholder="Somente números e caracteres do tipo “/” ou “-”">
-        Processo: <input type="text" name="processo"  placeholder="Somente números e caracteres do tipo “/” ou “-”">
-        Objeto: <input type="text" name="objeto">
-        Valor: <input type="text" name="valor">
-        Empresa Contratada: <input type="text" name="empresacontratada">
-        Data Assinatura<input type="date" name="dataassinatura">
-        Início da Vigência Contratual<input type="date" name="inicio">
-        Final da Vigência<input type="date" name="final">
-        Publicação D.O.U<input type="date" name="publicacao">
-        Observações/Providências a tomar:<input type="text" name="obs">
-        Vigência da Garantia Contratual: <input type="text" name="vigenciagarantia">
-        Fiscal: <input type="text" name="fiscal">
+    <form method="post" action="/novoContrato">
+        Ano de Origem<input type="date" value="" name="anoDeOrigem">
+        Contrato: <input type="text" value="" placeholder="Somente números e caracteres do tipo “/” ou “-”">
+        Processo: <input type="text" value="" placeholder="Somente números e caracteres do tipo “/” ou “-”">
+        Objeto: <input type="text" value="">
+        Valor: <input type="text" value="" name="valor">
+        Empresa Contratada: <input type="text" value="">
+        Data Assinatura<input type="date" value="" name="dataassinatura">
+        Início da Vigência Contratual<input type="date" value="" name="inicio">
+        Final da Vigência<input type="date" value="" name="final">
+        Publicação D.O.U<input type="date" value="" name="publicacao">
+        Observações/Providências a tomar:<input type="text" value="">
+        Vigência da Garantia Contratual: <input type="text" value="">
+        Fiscal: <input type="text" value="">
         <button type="submit">Salvar</button>
     </form>
 
