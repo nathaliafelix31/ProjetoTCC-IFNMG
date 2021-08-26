@@ -5,8 +5,11 @@ import com.sistemaifnmg.sistemaifnmg.Repository.ContratoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -38,8 +41,14 @@ public class IfnmgController {
 
     @RequestMapping(value="/buscarContrato", method=RequestMethod.GET)
     public String buscarContrato(){
-
         return "buscarContrato";
+    }
+
+    @RequestMapping(value="/buscarContrato", method=RequestMethod.POST)
+    public ModelAndView buscarContrato(@RequestParam("objbusca") String objbusca){
+        ModelAndView modelAndView = new ModelAndView("buscarContrato");
+        modelAndView.addObject("contratos", cr.findByObjeto(objbusca));
+        return modelAndView;
     }
     @RequestMapping(value="/aVencer", method=RequestMethod.GET)
     public String aVencer(){
