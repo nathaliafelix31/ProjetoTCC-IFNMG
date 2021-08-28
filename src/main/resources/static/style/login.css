@@ -9,15 +9,11 @@
 }
 
 body{
-    background: white;
+    background: linear-gradient(45deg, 	#1c0064, #008000);
     background-repeat: no-repeat;
     min-height: 100vh;
     min-width: 100vw;
 
-}
-
-.body-login{
-    background: linear-gradient(45deg, 	#1c0064, #008000)!important;
 }
 
 .login {
@@ -124,9 +120,5 @@ form button[type="submit"]:hover{
 }
 
 
-.nav-wrapper{
-    background: linear-gradient(45deg, 	#1c0064, #008000);
-
-}
 
 

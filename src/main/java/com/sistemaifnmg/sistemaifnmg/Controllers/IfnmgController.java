@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 public class IfnmgController {
@@ -28,15 +29,21 @@ public class IfnmgController {
 
     /*Contratos*/
     @RequestMapping(value="/novoContrato", method=RequestMethod.GET)
-    public String novoContrato(){
-        return "novoContrato";
+    public ModelAndView novoContrato(){
+        ModelAndView modelAndView = new ModelAndView("novoContrato");
+        modelAndView.addObject("contratoobj", new Contrato());
+        return modelAndView;
     }
 
-    @RequestMapping(value="/novoContrato", method=RequestMethod.POST)
-    public String novoContrato(Contrato contrato){
-
+    @RequestMapping(value="**/novoContrato", method=RequestMethod.POST)
+    public ModelAndView novoContrato(Contrato contrato){
         cr.save(contrato);
-        return "redirect:/novoContrato";
+        ModelAndView andView = new ModelAndView("/novoContrato");
+        Iterable<Contrato> contratoIt = cr.findAll();
+        andView.addObject("contratos", contratoIt);
+        andView.addObject("contratoobj", new Contrato());
+
+        return andView;
     }
 
     @RequestMapping(value="/buscarContrato", method=RequestMethod.GET)
@@ -48,8 +55,17 @@ public class IfnmgController {
     public ModelAndView buscarContrato(@RequestParam("objbusca") String objbusca){
         ModelAndView modelAndView = new ModelAndView("buscarContrato");
         modelAndView.addObject("contratos", cr.findByObjeto(objbusca));
+        modelAndView.addObject("contratoobj", new Contrato());
         return modelAndView;
     }
+    @RequestMapping(value="/editarcontrato/{idcontrato}", method=RequestMethod.GET)
+    public ModelAndView editarContrato(@PathVariable("idcontrato") Long idcontrato){
+        Optional<Contrato> contrato = cr.findById(idcontrato);
+        ModelAndView modelAndView = new ModelAndView("novoContrato");
+        modelAndView.addObject("contratoobj",contrato.get());
+        return modelAndView;
+    }
+
     @RequestMapping(value="/aVencer", method=RequestMethod.GET)
     public String aVencer(){
 

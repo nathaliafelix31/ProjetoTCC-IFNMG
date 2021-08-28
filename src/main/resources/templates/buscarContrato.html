@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Tela Inicial</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="style/style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -30,29 +30,46 @@
 
 </form>
 
-<div th:each="contratos :${contratos}" class="container detalhesBusca">
-    <h5>Detalhes do Contrato</h5>
-    <div class="row">
-        <p>Ano de Origem: <span th:text="${contratos.anoOrigem}"></span></p>
-        <p>Contrato: <span th:text="${contratos.numContrato}"></span></p>
-        <p>Processo: <span th:text="${contratos.processo}"></span></p>
-        <p>Objeto: <span th:text="${contratos.objeto}"></span></p>
-        <p>Valor: <span th:text="${contratos.valor}"></span></p>
-        <p>Empresa Contratada: <span th:text="${contratos.empContratada}"></span></p>
-        <p>Data Assinatura: <span th:text="${contratos.dataAssinatura}"></span></p>
-        <p>Início da Vigência Contratual: <span th:text="${contratos.inicioVigencia}"></span></p>
-        <p>Final da Vigência: <span th:text="${contratos.finalVigencia}"></span></p>
-        <p>Publicação D.O.U: <span th:text="${contratos.publiDou}"></span></p>
-        <p>Observações/Providências a tomar: <span th:text="${contratos.obs}"></span></p>
-        <p>Vigência da Garantia Contratual: <span th:text="${contratos.vigenciaGarantia}"></span></p>
-        <p>Fiscal: <span th:text="${contratos.fiscal}"></span></p>
+    <table class="container tabelabusca">
+        <thead>
+            <tr>
+                <th>Ano de Origem</th>
+                <th>Contrato</th>
+                <th>Objeto</th>
+            </tr>
+        </thead>
+    <tbody>
+         <tr th:each="contratos :${contratos}" class="container detalhesBusca">
 
-    </div>
+                    <td><span th:text="${contratos.anoOrigem}"></span></td>
+                    <td><span th:text="${contratos.numContrato}"></span></td>
+                    <td><span th:text="${contratos.objeto}"></span></td>
+                    <td><span><a th:href="@{/editarcontrato/{idcontrato}(idcontrato=${contratos.id})}">Ver</a></span></td>
 
+
+
+
+
+        </tr>
+    </tbody>
+</table>
+
+<form method="post" action="/telaInicial">
+    <button type="submit"><i class="material-icons left">undo</i>Voltar</button>
+</form>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-
+<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    <!-- <p>Processo: <span th:text="${contratos.processo}"></span></p>
+    <p>Valor: <span th:text="${contratos.valor}"></span></p>
+    <p>Empresa Contratada: <span th:text="${contratos.empContratada}"></span></p>
+    <p>Data Assinatura: <span th:text="${contratos.dataAssinatura}"></span></p>
+    <p>Início da Vigência Contratual: <span th:text="${contratos.inicioVigencia}"></span></p>
+    <p>Final da Vigência: <span th:text="${contratos.finalVigencia}"></span></p>
+    <p>Publicação D.O.U: <span th:text="${contratos.publiDou}"></span></p>
+    <p>Observações/Providências a tomar: <span th:text="${contratos.obs}"></span></p>
+    <p>Vigência da Garantia Contratual: <span th:text="${contratos.vigenciaGarantia}"></span></p>
+    <p>Fiscal: <span th:text="${contratos.fiscal}"></span></p> -->
 
 
 </body>
