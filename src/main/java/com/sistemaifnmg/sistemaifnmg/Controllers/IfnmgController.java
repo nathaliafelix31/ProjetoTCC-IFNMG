@@ -4,13 +4,11 @@ import com.sistemaifnmg.sistemaifnmg.Models.Contrato;
 import com.sistemaifnmg.sistemaifnmg.Repository.ContratoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.Optional;
@@ -38,7 +36,7 @@ public class IfnmgController {
     @RequestMapping(value="**/novoContrato", method=RequestMethod.POST)
     public ModelAndView novoContrato(Contrato contrato){
         cr.save(contrato);
-        ModelAndView andView = new ModelAndView("/novoContrato");
+        ModelAndView andView = new ModelAndView("novoContrato");
         Iterable<Contrato> contratoIt = cr.findAll();
         andView.addObject("contratos", contratoIt);
         andView.addObject("contratoobj", new Contrato());
@@ -48,6 +46,7 @@ public class IfnmgController {
 
     @RequestMapping(value="/buscarContrato", method=RequestMethod.GET)
     public String buscarContrato(){
+
         return "buscarContrato";
     }
 
@@ -65,6 +64,19 @@ public class IfnmgController {
         modelAndView.addObject("contratoobj",contrato.get());
         return modelAndView;
     }
+
+
+
+   @RequestMapping(value="/excluircontrato/{idcontrato}", method=RequestMethod.GET)
+    public ModelAndView excluirContrato(@PathVariable("idcontrato") Long idcontrato){
+        cr.deleteById(idcontrato);
+        ModelAndView modelAndView = new ModelAndView("novoContrato");
+        modelAndView.addObject("contratoobj",cr.findAll());
+        modelAndView.addObject("contratoobj", new Contrato());
+        return modelAndView;
+    }
+
+
 
     @RequestMapping(value="/aVencer", method=RequestMethod.GET)
     public String aVencer(){

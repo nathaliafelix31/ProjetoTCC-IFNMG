@@ -45,7 +45,8 @@
                     <td><span th:text="${contratos.numContrato}"></span></td>
                     <td><span th:text="${contratos.objeto}"></span></td>
                     <td><span><a th:href="@{/editarcontrato/{idcontrato}(idcontrato=${contratos.id})}">Ver</a></span></td>
-
+                    <td><span><a th:href="@{/excluircontrato/{idcontrato}(idcontrato=${contratos.id})}"><i class="material-icons left">delete</i></a></span></td>
+                    <!-- <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#excluircontrato').arg(0, contratos.id)).build()}"><i class="material-icons left">delete</i></a></td> -->
 
 
 
@@ -54,9 +55,9 @@
     </tbody>
 </table>
 
-<form method="post" action="/telaInicial">
-    <button type="submit"><i class="material-icons left">undo</i>Voltar</button>
-</form>
+        <form method="post" action="/telaInicial">
+            <button type="submit"><i class="material-icons left">undo</i>Voltar</button>
+        </form>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>

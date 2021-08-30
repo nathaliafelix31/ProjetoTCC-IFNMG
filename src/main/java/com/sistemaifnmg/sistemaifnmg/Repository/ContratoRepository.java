@@ -11,4 +11,7 @@ public interface ContratoRepository extends CrudRepository<Contrato, String> {
     List<Contrato> findByObjeto(String objeto);
 
     Optional<Contrato> findById(Long idcontrato);
+
+
+    Contrato deleteById(long idcont);
 }
