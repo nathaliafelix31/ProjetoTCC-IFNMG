@@ -6,9 +6,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: postgres://pjfyjuqhwtsrwo:7a3e948598a8d60d5138de3e146aec845876d8d6781dbad37da4334a4a326bdb@ec2-3-89-0-52.compute-1.amazonaws.com:5432/d27dk3e38qd9lg
-    username: pjfyjuqhwtsrwo
-    password: 7a3e948598a8d60d5138de3e146aec845876d8d6781dbad37da4334a4a326bdb
+    url: postgres://dzspbfmrubdqhq:865f754e9c9b97f4e8581f2ca774b79615b9d14a8d969bba027a272ea5a104f8@ec2-18-211-41-246.compute-1.amazonaws.com:5432/d4tgjmmb15fv4l
+    username: dzspbfmrubdqhq
+    password: 865f754e9c9b97f4e8581f2ca774b79615b9d14a8d969bba027a272ea5a104f8
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect

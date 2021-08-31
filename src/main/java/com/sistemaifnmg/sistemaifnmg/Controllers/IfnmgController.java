@@ -67,12 +67,12 @@ public class IfnmgController {
    @GetMapping("/excluircontrato/{idcontrato}")
     public ModelAndView excluirContrato(@PathVariable("idcontrato") Long idcontrato){
         cr.deleteById(idcontrato);
-        ModelAndView modelAndView = new ModelAndView("novoContrato");
+        ModelAndView modelAndView = new ModelAndView("buscarContrato");
         modelAndView.addObject("contratoobj",cr.findAll());
         modelAndView.addObject("contratoobj", new Contrato());
         return modelAndView;
     }
-    
+
 
 
 
