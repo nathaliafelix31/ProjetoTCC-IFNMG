@@ -32,43 +32,43 @@
                 ID:<input name="id" th:field="*{id}" readonly="readonly">
                 Ano de Origem<input type="date" value="" name="anoOrigem" th:field="*{anoOrigem}">
                 <span th:if="${#fields.hasErrors('anoOrigem')}"
-                      th:erros="*{anoOrigem}"></span>
+                      th:errors="*{anoOrigem}"></span>
                 Contrato: <input type="text" name="numContrato" placeholder="Somente números e caracteres do tipo “/” ou “-”" th:field="*{numContrato}">
                 <span th:if="${#fields.hasErrors('numContrato')}"
-                      th:erros="*{numContrato}"></span>
+                      th:errors="*{numContrato}"></span>
                 Processo: <input type="text" name="processo" placeholder="Somente números e caracteres do tipo “/” ou “-”" th:field="*{processo}">
                 <span th:if="${#fields.hasErrors('processo')}"
-                      th:erros="*{processo}"></span>
+                      th:errors="*{processo}"></span>
                 Objeto: <input type="text" name="objeto" th:field="*{objeto}">
                 <span th:if="${#fields.hasErrors('objeto')}"
-                      th:erros="*{objeto}"></span>
+                      th:errors="*{objeto}"></span>
                 Valor: <input type="text" name="valor" th:field="*{valor}">
                 <span th:if="${#fields.hasErrors('valor')}"
-                      th:erros="*{valor}"></span>
+                      th:errors="*{valor}"></span>
                 Empresa Contratada: <input type="text" name="empContratada" th:field="*{empContratada}">
                 <span th:if="${#fields.hasErrors('empContratada')}"
-                      th:erros="*{empContratada}"></span>
+                      th:errors="*{empContratada}"></span>
                 Data Assinatura<input type="date" name="dataAssinatura" th:field="*{dataAssinatura}">
                 <span th:if="${#fields.hasErrors('dataAssinatura')}"
-                      th:erros="*{dataAssinatura}"></span>
+                      th:errors="*{dataAssinatura}"></span>
                 Início da Vigência Contratual<input type="date" name="inicioVigencia" th:field="*{inicioVigencia}">
                 <span th:if="${#fields.hasErrors('inicioVigencia')}"
-                      th:erros="*{inicioVigencia}"></span>
+                      th:errors="*{inicioVigencia}"></span>
                 Final da Vigência<input type="date" name="finalVigencia" th:field="*{finalVigencia}">
                 <span th:if="${#fields.hasErrors('finalVigencia')}"
-                      th:erros="*{finalVigencia}"></span>
+                      th:errors="*{finalVigencia}"></span>
                 Publicação D.O.U<input type="date" name="publiDou" th:field="*{publiDou}">
                 <span th:if="${#fields.hasErrors('publiDou')}"
-                      th:erros="*{publiDou}"></span>
+                      th:errors="*{publiDou}"></span>
                 Observações/Providências a tomar:<input type="text" name="obs" th:field="*{obs}">
                 <span th:if="${#fields.hasErrors('obs')}"
-                      th:erros="*{obs}"></span>
+                      th:errors="*{obs}"></span>
                 Vigência da Garantia Contratual: <input type="text" name="vigenciaGarantia" th:field="*{vigenciaGarantia}">
                 <span th:if="${#fields.hasErrors('vigenciaGarantia')}"
-                      th:erros="*{vigenciaGarantia}"></span>
+                      th:errors="*{vigenciaGarantia}"></span>
                 Fiscal: <input type="text" name="fiscal" th:field="*{fiscal}">
                 <span th:if="${#fields.hasErrors('fiscal')}"
-                      th:erros="*{fiscal}"></span>
+                      th:errors="*{fiscal}"></span>
             </div>
 
 
