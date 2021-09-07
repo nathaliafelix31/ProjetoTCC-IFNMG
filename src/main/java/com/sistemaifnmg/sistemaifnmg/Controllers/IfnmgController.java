@@ -4,6 +4,7 @@ import com.sistemaifnmg.sistemaifnmg.Models.Contrato;
 import com.sistemaifnmg.sistemaifnmg.Repository.ContratoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,10 +31,13 @@ public class IfnmgController {
         return modelAndView;
     }
 
-    @RequestMapping(value="**/novoContrato", method=RequestMethod.POST)
-    public ModelAndView novoContrato(Contrato contrato){
-        cr.save(contrato);
+    @PostMapping("**/novoContrato")
+    public ModelAndView novoContrato(@Valid Contrato contrato, BindingResult result){
         ModelAndView andView = new ModelAndView("novoContrato");
+        if(result.hasErrors()){
+            return andView;
+        }
+        cr.save(contrato);
         Iterable<Contrato> contratoIt = cr.findAll();
         andView.addObject("contratos", contratoIt);
         andView.addObject("contratoobj", new Contrato());

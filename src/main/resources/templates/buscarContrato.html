@@ -46,7 +46,7 @@
                     <td><span th:text="${contratos.objeto}"></span></td>
                     <td><span><a th:href="@{/editarcontrato/{idcontrato}(idcontrato=${contratos.id})}">Ver</a></span></td>
                     <td><span><a th:href="@{/excluircontrato/{idcontrato}(idcontrato=${contratos.id})}"><i class="material-icons left">delete</i></a></span></td>
-                    <!-- <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#excluircontrato').arg(0, contratos.id)).build()}"><i class="material-icons left">delete</i></a></td> -->
+
 
 
 
@@ -61,16 +61,6 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
-    <!-- <p>Processo: <span th:text="${contratos.processo}"></span></p>
-    <p>Valor: <span th:text="${contratos.valor}"></span></p>
-    <p>Empresa Contratada: <span th:text="${contratos.empContratada}"></span></p>
-    <p>Data Assinatura: <span th:text="${contratos.dataAssinatura}"></span></p>
-    <p>Início da Vigência Contratual: <span th:text="${contratos.inicioVigencia}"></span></p>
-    <p>Final da Vigência: <span th:text="${contratos.finalVigencia}"></span></p>
-    <p>Publicação D.O.U: <span th:text="${contratos.publiDou}"></span></p>
-    <p>Observações/Providências a tomar: <span th:text="${contratos.obs}"></span></p>
-    <p>Vigência da Garantia Contratual: <span th:text="${contratos.vigenciaGarantia}"></span></p>
-    <p>Fiscal: <span th:text="${contratos.fiscal}"></span></p> -->
 
 
 </body>

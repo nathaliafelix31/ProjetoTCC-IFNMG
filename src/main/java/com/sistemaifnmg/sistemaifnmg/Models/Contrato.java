@@ -1,6 +1,8 @@
 package com.sistemaifnmg.sistemaifnmg.Models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -13,35 +15,49 @@ public class Contrato implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
     private String anoOrigem;
 
-    @Column(length = 70)
+    @NotNull
     private String numContrato;
 
-    @Column(length = 70)
+    @NotNull
+    @Size(min = 5, max = 70)
     private String processo;
 
-    @Column(length = 250)
+    @NotNull
+    @Size(min = 5, max = 250)
     private String objeto;
 
     @Column(precision = 8, scale = 2)
     private BigDecimal valor;
 
-    @Column(length = 250)
+    @NotNull
+    @Size(min = 5, max = 250)
     private String empContratada;
 
+    @NotNull
     private String dataAssinatura;
+
+    @NotNull
     private String inicioVigencia;
+
+    @NotNull
     private String finalVigencia;
+
+    @NotNull
     private String publiDou;
 
-    @Column(length = 250)
+    @NotNull
+    @Size(min = 5, max = 250)
     private String obs;
 
-    @Column(length = 250)
+    @NotNull
+    @Size(min = 5, max = 250)
     private String fiscal;
 
-    @Column(length = 250)
+    @NotNull
+    @Size(min = 5, max = 250)
     private String vigenciaGarantia;
 
 
