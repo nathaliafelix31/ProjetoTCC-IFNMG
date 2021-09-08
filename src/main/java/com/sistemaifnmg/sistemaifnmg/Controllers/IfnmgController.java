@@ -17,11 +17,16 @@ public class IfnmgController {
     @Autowired
     private ContratoRepository cr;
 
-    @RequestMapping(value="/telaInicial", method=RequestMethod.POST)
+    @RequestMapping("/")
+    public String login(){
+        return "login";
+    }
+
+   /* @RequestMapping(value="/telaInicial", method=RequestMethod.POST)
     public String form(){
 
         return "telaInicial";
-    }
+    }*/
 
     /*Contratos*/
     @RequestMapping(value="/novoContrato", method=RequestMethod.GET)
