@@ -22,7 +22,7 @@ public class IfnmgController {
         return "login";
     }
 
-   @RequestMapping("/")
+   @RequestMapping("/telaInicial")
     public String telaInicial(){
 
         return "telaInicial";
