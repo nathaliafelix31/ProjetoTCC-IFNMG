@@ -1,8 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
     <title>Login</title>
@@ -10,10 +12,18 @@
 </head>
 <body>
 
+<div th:if="${param.error}">
+    Senha ou Username invalido!
+</div>
+
+<div th:if="${param.logout}">
+    Você está desconectado!
+</div>
+
     <div class="login">
         <main class="container">
             <h2>Login</h2>
-            <form method="post" action="/telaInicial">
+            <form th:action="@{/login}" method="post" >
                 <div class="input-field">
                     <input type="text" name="username" id="username"
                            placeholder="Email">
