@@ -19,14 +19,22 @@ public class IfnmgController {
 
     @RequestMapping("/login")
     public String login(){
+
         return "login";
     }
 
-   @RequestMapping("/telaInicial")
+   @RequestMapping("/")
     public String telaInicial(){
 
         return "telaInicial";
     }
+
+    @RequestMapping("/telaInicial")
+    public String admin(){
+
+        return "telaInicial";
+    }
+
 
     /*Contratos*/
     @RequestMapping(value="/novoContrato", method=RequestMethod.GET)

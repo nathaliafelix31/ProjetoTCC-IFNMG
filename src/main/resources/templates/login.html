@@ -8,35 +8,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
     <title>Login</title>
-    <link rel="stylesheet" href="style/styleLogin.css">
+   <!-- <link rel="stylesheet" href="style/styleLogin.css"> -->
 </head>
 <body>
 
-<div th:if="${param.error}">
-    Senha ou Username invalido!
-</div>
-
-<div th:if="${param.logout}">
-    Você está desconectado!
-</div>
-
-    <div class="login">
-        <main class="container">
-            <h2>Login</h2>
-            <form th:action="@{/login}" method="post" >
-                <div class="input-field">
-                    <input type="text" name="username" id="username"
-                           placeholder="Email">
-                    <div class="underline"></div>
-                </div>
-                <div class="input-field">
-                    <input type="password" name="password" id="password"
-                           placeholder="Senha">
-                    <div class="underline"></div>
-                </div>
-                <button type="submit">Continue</button>
-            </form>
-        </main>
+    <div th:if="${param.error}">
+        Senha ou Username invalido!
     </div>
+
+    <div th:if="${param.logout}">
+        Você está desconectado!
+    </div>
+
+       <!-- <div class="login">
+            <main class="container"> -->
+                <h2>Login</h2>
+
+    <form th:action="@{/login}" method="post">
+       <div>
+           <label>User:  <input type="text" name="username"/></label>
+        </div>
+        <div>
+            <label>Senha: <input type="password" name="password"/></label>
+        </div>
+        <div>
+            <button type="submit">Continue</button>
+        </div>
+              <!--  <form th:action="@{/login}" method="post" >
+                    <div class="input-field">
+                        <input type="text" name="username" id="username"
+                               placeholder="Email">
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" id="password"
+                               placeholder="Senha">
+                        <div class="underline"></div>
+                    </div>
+                    <button type="submit">Continue</button>
+                </form>
+            </main>
+        </div> -->
+    </form>
 </body>
 </html>
