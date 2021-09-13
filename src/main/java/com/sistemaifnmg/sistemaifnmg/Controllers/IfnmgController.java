@@ -35,6 +35,11 @@ public class IfnmgController {
         return "telaInicial";
     }
 
+    @RequestMapping("/secure")
+    public String secure(){
+
+        return "secure";
+    }
 
     /*Contratos*/
     @RequestMapping(value="/novoContrato", method=RequestMethod.GET)
