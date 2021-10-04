@@ -24,6 +24,7 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+    
         rr.save(new Role("USER"));
         rr.save(new Role("ADMIN"));
 
@@ -32,11 +33,11 @@ public class DataLoader implements CommandLineRunner {
 
         Usuario usuario = new Usuario("admin@code.com", passwordEncoder.encode("1234"),"Admin", "Super",true,"admin");
         usuario.setRoles(Arrays.asList(adminRole));
-        rr.save(usuario);
+        ur.save(usuario);
 
         usuario = new Usuario("user@code.com", passwordEncoder.encode("1234"),"User", "Super",true,"user");
         usuario.setRoles(Arrays.asList(userRole));
-        rr.save(usuario);
+        ur.save(usuario);
 
     }
 }
